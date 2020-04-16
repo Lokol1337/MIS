@@ -3,22 +3,23 @@
 
 using namespace std;
 
+
+
 LList::LList()
     {
         head = NULL;
     }
-    
 LList::~LList()
     {
 
     }
-    
 int LList::operator[](size_t idx) const
 {
 	Node* bufNode = head;
 	for (int i = 0; i < idx; ++i) {
-    	bufNode = bufNode->next;
+		bufNode = bufNode->next;
 	}
+
 	return bufNode->data;
 }
 
@@ -28,8 +29,10 @@ int& LList::operator[](size_t idx)
 	for (int i = 0; i < idx; ++i) {
 		bufNode = bufNode->next;
 	}
+
 	return bufNode->data;
 }
+
 
 void LList::push_back(int val)
     {
@@ -50,6 +53,7 @@ void LList::push_back(int val)
 void LList::push_front(int val)
     {
     Node *nd = new Node;
+
         if(head)
         {
             Node *tmp = head;
@@ -64,8 +68,6 @@ void LList::push_front(int val)
             nd->data = val;
         }
     }
-
-
 
 void LList::pop_back()
     {
@@ -140,7 +142,6 @@ void LList::erase_at(size_t idx)
         else
             cout<<"The list is empty!" << endl;
     }
-
 void LList::insert_at(size_t idx, int val)
     {
         Node *tmp = head;
@@ -153,6 +154,7 @@ void LList::insert_at(size_t idx, int val)
         if(idx==0)
         {
             Node *nd = new Node;
+
             if(head)
             {
                 Node *current = head;
@@ -203,11 +205,11 @@ void LList::insert_at(size_t idx, int val)
            a->next = current;
            a->data = val;
         }
-    }
 
+    }
 void LList::reverse()
     {
-        Node *tmp = head;
+     Node *tmp = head;
         Node *next = NULL;
         Node *last = NULL;
         while(tmp)
@@ -222,15 +224,5 @@ void LList::reverse()
 
 int main()
     {
-    LList l;
-    l.push_front(2);
-    l.push_front(1);
-    l.push_front(0);
-    for(int i = 0;i < l.size();i++){
-        cout<<l[i]<<" ";
-    }
-    l.reverse();
-    for(int i = 0;i < l.size();i++){
-        cout<<l[i]<<" ";
-    }
+
     }
